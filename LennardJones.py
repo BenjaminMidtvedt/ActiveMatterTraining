@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.spatial.distance as spdist
 
+
 m = 1
 dt = 1 / 100
 T = 50

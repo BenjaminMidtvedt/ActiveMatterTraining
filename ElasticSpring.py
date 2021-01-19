@@ -3,6 +3,7 @@ from ampy import ode
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 m = 1
 k = 1
 dt = 1 / 20
