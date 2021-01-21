@@ -28,6 +28,7 @@ def acceleration(x):
         # The last particle in the string
         elif i == len(x[0]) - 1:
 
+            # Change handling depending on subproblem
             if subproblem == "a":
                 a.append(0)
 

@@ -51,8 +51,6 @@ for idx, solver_class in enumerate(tested_solvers):
 
     # Search from  1 to ignore the zero component (probably not needed).
     a_max = np.argmax(x_fft[1:100]) + 1
-    # plt.plot(x_fft[0:4])
-    # plt.show()
 
     print(
         str_struct.format(
