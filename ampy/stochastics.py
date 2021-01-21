@@ -29,6 +29,7 @@ def Diffusion(
     dt=1 / 60,
     random_generator=np.random.randn,
     inertial="auto",
+    ndim=1,
 ):
 
     tau = gamma / m
@@ -52,10 +53,32 @@ def Diffusion(
                 + coef_3 * Wt[step - 2]
             )
 
-            # print(results[step])
 
         return results[2:]
     else:
         # Non-inertial
 
         return np.cumsum(Wt) * np.sqrt(T_coef / gamma)
+
+
+def TrappedParticle(
+    num_values,
+    stiffness,
+    gamma=1,
+    T=300,
+    dt=1 / 60,
+    ndim=2,
+):
+
+    Wt = random_generator((num_values, ndim))
+
+    coef_1 = 
+
+    results = np.zeros((num_values + 1,))
+
+    for step in range(2, num_values + 2):
+            results[step] = (
+                coef_1 * results[step - 1]
+                - coef_2 * results[step - 2]
+                + coef_3 * Wt[step - 2]
+            )
