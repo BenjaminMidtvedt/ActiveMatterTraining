@@ -14,7 +14,7 @@ dts = [0.01, 0.05, 0.1]
 
 colors = ["r", "g", "b", "o", "k", "m"]
 
-axes = [plt.subplot(2, 3, idx + 1) for idx in range(len(dts))]
+axes = [plt.subplot(2, len(dts), idx + 1) for idx in range(len(dts))]
 
 ax_low = plt.subplot(2, 1, 2)
 
@@ -38,5 +38,5 @@ for idx, dt in enumerate(dts):
 
     msd = np.mean(msd, axis=0)
 
-    plt.plot(t, msd, c=colors[idx], alpha=0.5)
+    ax_low.plot(t, msd, c=colors[idx], alpha=0.5)
 plt.show()
